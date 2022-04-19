@@ -41,6 +41,6 @@ function Update_upgrade () {
 	echo -e "${GREEN}Cleaning finished.${NOCOLOR}";sleep 1
 	echo
 	echo -e "${GREEN}Be light, be Yourself...${NOCOLOR}"
+    echo
+    echo
 }
-
-Update_upgrade
