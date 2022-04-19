@@ -19,7 +19,7 @@ TIME_STAMP="Updated $RIGHT_NOW by $USER"
 # Update Upgrade
 
 function Update_upgrade () {
-	# Update e Upgrade do sistema
+	# System update/upgrade
 	echo -e "${GREEN}Starting Update && Upgrade.${NOCOLOR}"
 	echo
 	sudo dpkg --configure -a
@@ -31,7 +31,7 @@ function Update_upgrade () {
 	echo
 	echo -e "${GREEN}Update and Upgrade finished.${NOCOLOR}";sleep 1
 
-	# Iniciar limpeza de sistema
+	# System cleaning
 	echo -e "${GREEN}Starting Cleaning.${NOCOLOR}";sleep 1
 	echo
 	sudo apt-get --purge autoremove
