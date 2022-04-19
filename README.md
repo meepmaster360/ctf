@@ -1,6 +1,5 @@
-# ctf
-Pentesting Script 
+# CTF - Pentesting Script - CTF #
 
-Meep
+This is a Bash Script for automatization of pentesting
 
-Hello World 1 teste
+
