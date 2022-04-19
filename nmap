@@ -15,3 +15,30 @@ RIGHT_NOW=$(date +"%x %r %z")
 TIME_STAMP="Updated $RIGHT_NOW by $USER"
 
 echo $(TIME_STAMP)
+
+# Update Upgrade
+
+function Update_upgrade () {
+	# Update e Upgrade do sistema
+	echo -e "${GREEN}Starting Update && Upgrade.${NOCOLOR}"
+	echo
+	sudo dpkg --configure -a
+	sudo apt-get install -f
+	sudo apt update --fix-missing
+	sudo apt-get upgrade -y
+	sudo apt full-upgrade -y
+	sudo apt-get dist-upgrade -y
+	echo
+	echo -e "${GREEN}Update and Upgrade finished.${NOCOLOR}";sleep 1
+
+	# Iniciar limpeza de sistema
+	echo -e "${GREEN}Starting Cleaning.${NOCOLOR}";sleep 1
+	echo
+	sudo apt-get --purge autoremove
+	sudo apt-get autoclean
+	sudo apt-get clean
+	echo
+	echo -e "${GREEN}Cleaning finished.${NOCOLOR}";sleep 1
+	echo
+	echo -e "${GREEN}Be light, be Yourself...${NOCOLOR}"
+}
