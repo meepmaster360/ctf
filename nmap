@@ -14,4 +14,4 @@ NOCOLOR="\033[0m"
 RIGHT_NOW=$(date +"%x %r %z")
 TIME_STAMP="Updated $RIGHT_NOW by $USER"
 
-echo TIME_STAMP
+echo $(TIME_STAMP)
