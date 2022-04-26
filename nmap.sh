@@ -69,5 +69,5 @@ user
 connect
 update_upgrade
 
-echo ${TIME_STAMP}
+echo $TIME_STAMP
 echo
