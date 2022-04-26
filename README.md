@@ -4,6 +4,7 @@ This is a Bash Script for automatization of pentesting
 
 Tested in Kali Linux 
 
+
 Check Internet Connection
 
 Check Root Status
