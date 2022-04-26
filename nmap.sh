@@ -68,3 +68,6 @@ function update_upgrade () {
 user
 connect
 update_upgrade
+
+echo $(TIME_STAMP)
+echo
