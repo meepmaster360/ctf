@@ -16,6 +16,7 @@ RIGHT_NOW=$(date +"%x %r %z")
 TIME_STAMP="Updated $RIGHT_NOW by $USER"
 
 # User root
+
 function user() {
 	if [ $(id -u) != "0" ]; then
 		echo -e "\n$r[!]$e Please run this script with root user!"
@@ -24,6 +25,7 @@ function user() {
 }
 
 # Internet connection
+
 function connect() {
 	ping -c 1 -w 3 google.com > /dev/null 2>&1
 	if [ "$?" != 0 ]; then
