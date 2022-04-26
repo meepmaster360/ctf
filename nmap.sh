@@ -10,7 +10,7 @@ RED="\033[1;31m"
 GREEN="\033[1;32m"
 NOCOLOR="\033[0m"
 
-# Colors 2
+# Colors 2 variables
 
 r='\e[1;31m'
 g='\e[1;32m'
@@ -21,12 +21,12 @@ w='\e[0;38m'
 e='\e[0m'
 
 
-# Time
+# Time variable
 
 RIGHT_NOW=$(date +"%x %r %z")
 TIME_STAMP="Updated $RIGHT_NOW by $USER"
 
-# User root
+# User root check
 
 function user() {
 	if [ $(id -u) != "0" ];then
@@ -35,7 +35,7 @@ function user() {
 	fi
 }
 
-# Internet connection
+# Internet connection check
 
 function connect() {
 	ping -c 1 -w 3 google.com > /dev/null 2>&1
@@ -45,7 +45,7 @@ function connect() {
 	fi
 }
 
-# Update Upgrade
+# Update Upgrade Cleaning
 
 function update_upgrade () {
 	# System update/upgrade
@@ -83,7 +83,7 @@ function IP () {
 
 function app_install () {
 
-# Nikto installation	
+# Nmap installation	
 
 	if [ ! -x "$(command -v nmap)" ];then
         echo "[+] nmap not detected...Installing"
@@ -112,6 +112,8 @@ else
     echo "[+] dirbuster detected"
      
 fi
+sleep 2
+
 }
 
 
