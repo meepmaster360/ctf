@@ -67,7 +67,7 @@ function update_upgrade () {
 
 function IP () {
 	IP_SISTEMA=`hostname -I`
-	echo "IP is: $IP_SISTEMA"
+	echo "Your IP is: $IP_SISTEMA"
 }
 
 # Call the functions
