@@ -112,6 +112,7 @@ else
     echo "[+] dirbuster detected"
      
 fi
+echo
 sleep 2
 
 }
