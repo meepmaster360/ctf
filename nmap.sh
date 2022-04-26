@@ -112,6 +112,15 @@ else
     echo "[+] dirbuster detected"
      
 fi
+# hydra installation
+
+if [ ! -x "$(command -v hydra)" ];then
+        echo "[+] hydra not detected...Installing"
+        sudo apt-get install hydra -y > installing;rm installing
+else
+    echo "[+] hydra detected"
+     
+fi
 echo
 sleep 2
 }
