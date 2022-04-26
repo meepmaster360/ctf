@@ -470,5 +470,5 @@ sleep 5
 # Hydra not activated, remove hashtag to activate function hydra
 # hydra
 
-# Deepscan not activated, remove hashtag to activate function hydra
+# Deepscan not activated, remove hashtag to activate function deepscan
 # deepscan
