@@ -4,7 +4,7 @@ This is a Bash Script for automatization of pentesting
 
 Check Internet Connection
 
-Check Root status
+Check Root Status
 
 Check and install
 Nmap, Nikto, Dirbuster and Hydra
