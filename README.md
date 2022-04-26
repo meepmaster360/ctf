@@ -15,4 +15,8 @@ IP
 
 Hydra Attack
 
+Username wordlist
+
+Pass wordlist
+
 
