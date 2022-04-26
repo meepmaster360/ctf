@@ -18,7 +18,7 @@ TIME_STAMP="Updated $RIGHT_NOW by $USER"
 # User root
 
 function user() {
-	if [ $(id -u) != "0" ]; then
+	if [ $(id -u) != "0" ];then
 		echo -e "\n$r[!]$e Please run this script with root user!"
 		exit 1
 	fi
@@ -28,7 +28,7 @@ function user() {
 
 function connect() {
 	ping -c 1 -w 3 google.com > /dev/null 2>&1
-	if [ "$?" != 0 ]; then
+	if [ "$?" != 0 ];then
 		echo -e "\n$r[!]$e This script needs an active internet connection!"
 		exit 1
 	fi
