@@ -15,10 +15,26 @@ NOCOLOR="\033[0m"
 RIGHT_NOW=$(date +"%x %r %z")
 TIME_STAMP="Updated $RIGHT_NOW by $USER"
 
+# User root
+function user() {
+	if [ $(id -u) != "0" ]; then
+		echo -e "\n$r[!]$e Please run this script with root user!"
+		exit 1
+	fi
+}
+
+# Internet connection
+function connect() {
+	ping -c 1 -w 3 google.com > /dev/null 2>&1
+	if [ "$?" != 0 ]; then
+		echo -e "\n$r[!]$e This script needs an active internet connection!"
+		exit 1
+	fi
+}
 
 # Update Upgrade
 
-function Update_upgrade () {
+function update_upgrade () {
 	# System update/upgrade
 	echo -e "${GREEN}Starting Update && Upgrade.${NOCOLOR}"
 	echo
