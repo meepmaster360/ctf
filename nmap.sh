@@ -62,3 +62,9 @@ function update_upgrade () {
     echo
     echo
 }
+
+# Call the functions
+
+user
+connect
+update_upgrade
