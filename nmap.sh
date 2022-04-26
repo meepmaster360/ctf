@@ -76,9 +76,8 @@ function IP () {
 user
 connect
 update_upgrade
+IP
 
 echo $TIME_STAMP
 echo
-
-echo $IP
 echo
