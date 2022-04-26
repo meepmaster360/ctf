@@ -77,6 +77,7 @@ connect
 update_upgrade
 IP
 
+echo
 echo $TIME_STAMP
 echo
 echo
