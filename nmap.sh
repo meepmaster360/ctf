@@ -5,9 +5,20 @@
 
 
 # Color variables 
+
 RED="\033[1;31m"
 GREEN="\033[1;32m"
 NOCOLOR="\033[0m"
+
+# Colors 2
+
+r='\e[1;31m'
+g='\e[1;32m'
+y='\e[1;33m'
+b='\e[1;34m'
+c='\e[1;36m'
+w='\e[0;38m'
+e='\e[0m'
 
 
 # Time
@@ -67,7 +78,7 @@ function update_upgrade () {
 
 function IP () {
 	IP_SISTEMA=`hostname -I`
-	echo "Your IP is: $IP_SISTEMA"
+	echo -e "\n$g[!]$e Your IP is: $IP_SISTEMA"
 }
 
 # Call the functions
@@ -78,6 +89,6 @@ update_upgrade
 IP
 
 echo
-echo $TIME_STAMP
+echo -e "\n$b[!]$e $TIME_STAMP"
 echo
 echo
