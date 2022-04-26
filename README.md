@@ -15,6 +15,8 @@ IP
 
 Hydra Attack
 
+DeepScan
+
 Username wordlist
 
 Pass wordlist
