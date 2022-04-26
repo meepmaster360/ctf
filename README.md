@@ -7,10 +7,7 @@ Check Internet Connection
 Check Root status
 
 Check and install
-    Nmap
-    Nikto
-    Dirbuster
-    Hydra
+Nmap, Nikto, Dirbuster and Hydra
 
 Update Upgrade Clean
 
