@@ -470,5 +470,6 @@ sleep 5
 # Hydra not activated, remove hashtag to activate function hydra
 # hydra
 
+# Deepscan works in kali flavour
 # Deepscan not activated, remove hashtag to activate function deepscan
 # deepscan
