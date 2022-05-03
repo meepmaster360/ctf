@@ -454,6 +454,16 @@ if [ -z "$port_8080" ];
 	fi
 }
 
+function ports_open () {
+	echo Type IP
+	read ip
+	echo Grabbing ports...
+	ports=$(nmap -p- --min-rate 1000 -T4 $ip | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//)  
+	echo Ports grabbed!
+	echo Scanning...
+	nmap -sC -sV -Pn -p $ports $ip
+}	
+
 
 # Call the functions
 
@@ -473,3 +483,6 @@ sleep 5
 # Deepscan works in kali flavour
 # Deepscan not activated, remove hashtag to activate function deepscan
 # deepscan
+
+# Port Scan and Services
+ports_open
