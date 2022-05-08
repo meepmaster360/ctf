@@ -3,7 +3,9 @@
 # CTFmeep #
 ----------
 
-This is a Bash Script for automatization of pentesting
+This is a Bash Script for automatization pentesting
+
+Ideal for the Catch The Flag (CTF) chalenges
 
 Tested in Kali Linux 
 
