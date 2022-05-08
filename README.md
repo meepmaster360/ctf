@@ -15,9 +15,9 @@ Update Upgrade Clean
 
 IP
 
-# Hydra Attack
+Hydra Attack
 
-# DeepScan
+DeepScan
 
 Username wordlist
 
