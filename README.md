@@ -1,5 +1,6 @@
 # CTF - Pentesting Script - CTF #
 
+# CTFmeep #
 ----------
 
 This is a Bash Script for automatization of pentesting
@@ -41,6 +42,7 @@ Ideally, you should be able to just type:
 Using ctfmeep
 ----------
 To run the aplication:
+
     $sudo bash ctfmeep.sh
     or
     $chmod +x ctfmeep.sh (only once)
