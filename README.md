@@ -38,14 +38,14 @@ Ideally, you should be able to just type:
     cd ctf
 
 
-Using meepscan
+Using ctfmeep
 ----------
 To run the aplication:
-    $sudo bash meepscan.sh
+    $sudo bash ctfmeep.sh
     or
-    $chmod +x meepscan.sh (only once)
-    $sudo ./meepscan.sh
-    #./meepscan.sh (root user)
+    $chmod +x ctfmeep.sh (only once)
+    $sudo ./ctfmeep.sh
+    #./ctfmeep.sh (root user)
 
 
 Version style
@@ -63,7 +63,7 @@ v*.*.0 - Minor Changes
 
 Contributing
 ------------
-Information about filing bug reports and contributing to the meepscan project can
+Information about filing bug reports and contributing to the ctfmeep project can
 be found in the [BUGHOUSE](BUGHOUSE) and [CONTRIBUTING.md](CONTRIBUTING.md)
 files.
 
