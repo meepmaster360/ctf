@@ -5,7 +5,7 @@
 
 This is a Bash Script for automatization pentesting
 
-Ideal for the Catch The Flag (CTF) chalenges
+Ideal for the Catch The Flag (CTF) challenges
 
 Tested in Kali Linux 
 
