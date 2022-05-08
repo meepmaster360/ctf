@@ -24,7 +24,7 @@ e='\e[0m'
 # Time variable
 
 RIGHT_NOW=$(date +"%x %r %z")
-TIME_STAMP="Updated ${RED}IGHT_NOW by $USER"
+TIME_STAMP="Updated ${RED}RIGHT_NOW by $USER"
 
 # User root check
 
@@ -77,7 +77,7 @@ function update_upgrade () {
 # IP
 
 function IP () {
-	IP_SISTEMA=`hostname -I`
+	IP_SISTEMA=$(hostname -I)  												# or like this: IP_SISTEMA=`hostname -I`
 	echo -e "\n${GREEN}[!]${NOCOLOR} Your IP is: $IP_SISTEMA"
 }
 
@@ -86,48 +86,48 @@ function app_install () {
 # Nmap installation	
 
 	if [ ! -x "$(command -v nmap)" ];then
-        echo "[+] nmap not detected...Installing"
+        echo "\n${RED}[+]${NOCOLOR} nmap not detected...Installing"
         sudo apt-get install nmap -y > installing;rm installing
 else
-    echo "[+] nmap detected"
+    echo "\n${GREEN}[+]${NOCOLOR} nmap detected"
      
 fi
 
 # Nikto installation
 
 if [ ! -x "$(command -v nikto)" ];then
-        echo "[+] nikto not detected...Installing"
+        echo "\n${RED}[+]${NOCOLOR} nikto not detected...Installing"
         sudo apt-get install nikto -y > installing;rm installing
 else
-    echo "[+] nikto detected"
+    echo "\n${GREEN}[+]${NOCOLOR} nikto detected"
      
 fi
 
 # Dirbuster installation
 
 if [ ! -x "$(command -v dirbuster)" ];then
-        echo "[+] dirbuster not detected...Installing"
+        echo "\n${RED}[+]${NOCOLOR} dirbuster not detected...Installing"
         sudo apt-get install dirbuster -y > installing;rm installing
 else
-    echo "[+] dirbuster detected"
+    echo "\n${GREEN}[+]${NOCOLOR} dirbuster detected"
      
 fi
 # Hydra installation
 
 if [ ! -x "$(command -v hydra)" ];then
-        echo "[+] hydra not detected...Installing"
+        echo "\n${RED}[+]${NOCOLOR} hydra not detected...Installing"
         sudo apt-get install hydra -y > installing;rm installing
 else
-    echo "[+] hydra detected"
+    echo "\n${GREEN}[+]${NOCOLOR} hydra detected"
      
 fi
 # Medusa installation
 
 if [ ! -x "$(command -v medusa)" ];then
-        echo "[+] medusa not detected...Installing"
+        echo "\n${RED}[+]${NOCOLOR} medusa not detected...Installing"
         sudo apt-get install medusa -y > installing;rm installing
 else
-    echo "[+] medusa detected"
+    echo "\n${GREEN}[+]${NOCOLOR} medusa detected"
      
 fi
 echo
