@@ -454,7 +454,7 @@ if [ -z "$port_8080" ];
 	fi
 }
 
-function ports_open () {
+function nmap_ports_open () {
 	echo Type IP
 	read ip
 	echo Grabbing ports...
@@ -466,20 +466,34 @@ function ports_open () {
 
 function help() {
 less << _EOF_
- Meepscan -- Nmap Scanner (Version 1.6.1)  -help
- Meepscan is a tool that automates nmap scanning of defined ip, based in
+ Ctf -- Nmap Scanner (Version 1.6.1)  -help
+ Ctf is a tool that automates nmap scanning of defined ip, based in
  Linux systems.
  Press "q" to exit this Help page.
  Commands:
  
- 	Choose directory
-	git clone git@github.com:meepmaster360/meepscan.git
-	cd meepscan
-	$sudo bash meepscan.sh 
-	or 
-	$chmod +x meepscan.sh (once) 
-	$sudo ./meepscan.
+Installing
+----------
+Ideally, you should be able to just type:
+
+    Choose directory
+    
+    git clone git@github.com:meepmaster360/ctf.git
+    
+    cd ctf
+
+
+Using ctf
+----------
+To run the aplication:
+    $sudo bash ctf.sh
+    or
+    $chmod +x ctf.sh (only once)
+    $sudo ./ctf.sh
+    #./ctf.sh (root user)
+
  By Meepmaster360
+
  Disclaimer:
  THIS SOFTWARE IS PROVIDED BY MEEPMASTER360 “AS IS” AND ANY EXPRESS OR IMPLIED
  WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
@@ -495,7 +509,7 @@ less << _EOF_
 _EOF_
 }
 
-function banner() {
+function banner() {   # Change all;  figlet the title; start version
 	clear
 	echo -e "${GREEN}"
 	echo -e " __  __  ____  ____  ____  ___   ___    __    _  _  ____  ____  "
@@ -505,7 +519,7 @@ function banner() {
 	echo -e "${NOCOLORS}v1.6.2" 
 }
 
-function menu(){
+function menu(){   # Change to case 
     echo -e ""
     echo -e "${GREEN}[?]${NOCOLOR} Scan type"
     echo -e ""
@@ -521,27 +535,22 @@ function menu(){
 	read meno;
     echo -e ""
     
-    if [ $meno = 1 ]
-    then
-        nmap_ports_open_fast
-    elif [ $meno = 2 ]
-    then
+    if [ $meno = 1 ];then # Change to case
+		nmap_ports_open
+    	elif [ $meno = 2 ];then
         nmap_ports_open_intense
-    elif [ $meno = 3 ]
-    then
+    	elif [ $meno = 3 ];then
         app_install
-    elif [ $meno = 4 ]
-    then
+    	elif [ $meno = 4 ];then
         help
-	elif [ $meno = 0 ]
-    then
+		elif [ $meno = 0 ];then
         banner
 		echo -e "\n${GREEN} Nice to meet you, Bye...${NOCOLOR}\n";sleep 2
-	exit		
-    else
+		exit		
+    	else
 		banner
 		echo -e "\n${GREEN} Wrong option, Bye...${NOCOLOR}\n";sleep 2
-	exit
+		exit
     fi
 	menu
 }
