@@ -1,37 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@meepmaster360 
-meepmaster360
-/
-meepscan
-Public
-Code
-Issues
-2
-Pull requests
-1
-Discussions
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Create LICENSE
- main
- v1.0.0
-@meepmaster360
-meepmaster360 committed 2 days ago 
-1 parent f16ce97 commit d23fe2c0fd37a90eb94ec7e186377c3bf842a936
-Showing  with 674 additions and 0 deletions.
- 674  
-LICENSE
-@@ -0,0 +1,674 @@
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -706,24 +672,3 @@ may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
-0 comments on commit d23fe2c
-@meepmaster360
- 
- 
-Leave a comment
-No file chosen
-Attach files by dragging & dropping, selecting or pasting them.
- You’re receiving notifications because you’re watching this repository.
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Copied!
