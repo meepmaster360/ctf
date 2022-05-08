@@ -213,7 +213,7 @@ fi
 function deepscan () {
 
 #Variables
-echo -e "$OKRED Set hostname or IP ${RED}ESET"
+echo -e "$OKRED Set hostname or IP ${NOCOLOR}"
 read target
 TARGET="$target"
 USER_FILE="usernames.txt"
@@ -231,9 +231,9 @@ RESET='\e[0m'
 
 
 #Starting the process
-echo -e "$OKRED Scan away with DeepScan.${RED}ESET"
+echo -e "$OKRED Scan away with DeepScan.${NOCOLOR}"
 
-echo -e "$OKORANGE Usage ./DeepScan.sh target-ip-address or url ...${RED}ESET"
+echo -e "$OKORANGE Usage ./DeepScan.sh target-ip-address or url ...${NOCOLOR}"
 
 
 #Scannig to xml file, then grep the open ports
@@ -258,9 +258,9 @@ port_8080=`grep 'portid="8080"' $TARGET.xml | grep open`
 
 if [ -z "$port_80" ];
 	then
-		echo -e "$OKRED + -- --=[Port 80 closed... skipping.${RED}ESET"
+		echo -e "$OKRED + -- --=[Port 80 closed... skipping.${NOCOLOR}"
 	else
-		echo -e "$OKORANGE + -- --=[Port 80 opened... running tests...${RED}ESET"
+		echo -e "$OKORANGE + -- --=[Port 80 opened... running tests...${NOCOLOR}"
 		nikto -host $TARGET
 		davtest -url http://$TARGET/
 		nmap -p80 --script=http-adobe-coldfusion-apsa1301 --script=http-affiliate-id --script=http-apache-negotiation --script=http-apache-server-status --script=http-aspnet-debug --script=http-auth-finder --script=http-auth --script=http-backup-finder --script=http-brute --script=http-coldfusion-subzero  --script=http-config-backup --script=http-default-accounts --script=http-frontpage-login --script=http-iis-short-name-brute --script=http-iis-webdav-vuln --script=http-methods --script=http-method-tamper --script=http-passwd --script=http-phpmyadmin-dir-traversal --script=http-php-version --script=http-put --script=http-robots.txt --script=http-server-header --script=http-shellshock --script=http-title --script=http-userdir-enum --script=http-vuln-cve2006-3392 --script=http-vuln-cve2009-3960 --script=http-vuln-cve2010-0738 --script=http-vuln-cve2010-2861 --script=http-vuln-cve2011-3192 --script=http-vuln-cve2011-3368 --script=http-vuln-cve2012-1823 --script=http-vuln-cve2013-0156 --script=http-vuln-cve2013-6786 --script=http-vuln-cve2013-7091 --script=http-vuln-cve2014-2126 --script=http-vuln-cve2014-2127 --script=http-vuln-cve2014-2128 --script=http-vuln-cve2014-2129 --script=http-vuln-cve2014-3704 --script=http-vuln-cve2014-8877 --script=http-vuln-cve2015-1427 --script=http-vuln-cve2015-1635 $TARGET
@@ -269,9 +269,9 @@ if [ -z "$port_80" ];
 
 if [ -z "$port_443" ];
 	then
-		echo -e "$OKRED + -- --=[Port 443 closed... skipping.${RED}ESET"
+		echo -e "$OKRED + -- --=[Port 443 closed... skipping.${NOCOLOR}"
 	else
-		echo -e "$OKORANGE + -- --=[Port 443 opened... running tests...${RED}ESET"
+		echo -e "$OKORANGE + -- --=[Port 443 opened... running tests...${NOCOLOR}"
 		nmap -p443 --script=http-adobe-coldfusion-apsa1301 --script=http-affiliate-id --script=http-apache-negotiation --script=http-apache-server-status --script=http-aspnet-debug --script=http-auth-finder --script=http-auth --script=http-backup-finder --script=http-brute --script=http-coldfusion-subzero  --script=http-config-backup --script=http-default-accounts --script=http-frontpage-login --script=http-iis-short-name-brute --script=http-iis-webdav-vuln --script=http-methods --script=http-method-tamper --script=http-passwd --script=http-phpmyadmin-dir-traversal --script=http-php-version --script=http-put --script=http-robots.txt --script=http-server-header --script=http-shellshock --script=http-title --script=http-userdir-enum --script=http-vuln-cve2006-3392 --script=http-vuln-cve2009-3960 --script=http-vuln-cve2010-0738 --script=http-vuln-cve2010-2861 --script=http-vuln-cve2011-3192 --script=http-vuln-cve2011-3368 --script=http-vuln-cve2012-1823 --script=http-vuln-cve2013-0156 --script=http-vuln-cve2013-6786 --script=http-vuln-cve2013-7091 --script=http-vuln-cve2014-2126 --script=http-vuln-cve2014-2127 --script=http-vuln-cve2014-2128 --script=http-vuln-cve2014-2129 --script=http-vuln-cve2014-3704 --script=http-vuln-cve2014-8877 --script=http-vuln-cve2015-1427 --script=http-vuln-cve2015-1635 $TARGET
 		nikto -host $TARGET --port 443
 		davtest -url https://$TARGET/
@@ -280,9 +280,9 @@ if [ -z "$port_443" ];
 
 if [ -z "$port_8080" ];
 	then
-		echo -e "$OKRED + -- --=[Port 8080 closed... skipping.${RED}ESET"
+		echo -e "$OKRED + -- --=[Port 8080 closed... skipping.${NOCOLOR}"
 	else
-		echo -e "$OKORANGE + -- --=[Port 8080 opened... running tests...${RED}ESET"
+		echo -e "$OKORANGE + -- --=[Port 8080 opened... running tests...${NOCOLOR}"
 		nmap -p8080 --script=http-adobe-coldfusion-apsa1301 --script=http-affiliate-id --script=http-apache-negotiation --script=http-apache-server-status --script=http-aspnet-debug --script=http-auth-finder --script=http-auth --script=http-backup-finder --script=http-brute --script=http-coldfusion-subzero  --script=http-config-backup --script=http-default-accounts --script=http-frontpage-login --script=http-iis-short-name-brute --script=http-iis-webdav-vuln --script=http-methods --script=http-method-tamper --script=http-passwd --script=http-phpmyadmin-dir-traversal --script=http-php-version --script=http-put --script=http-robots.txt --script=http-server-header --script=http-shellshock --script=http-title --script=http-userdir-enum --script=http-vuln-cve2006-3392 --script=http-vuln-cve2009-3960 --script=http-vuln-cve2010-0738 --script=http-vuln-cve2010-2861 --script=http-vuln-cve2011-3192 --script=http-vuln-cve2011-3368 --script=http-vuln-cve2012-1823 --script=http-vuln-cve2013-0156 --script=http-vuln-cve2013-6786 --script=http-vuln-cve2013-7091 --script=http-vuln-cve2014-2126 --script=http-vuln-cve2014-2127 --script=http-vuln-cve2014-2128 --script=http-vuln-cve2014-2129 --script=http-vuln-cve2014-3704 --script=http-vuln-cve2014-8877 --script=http-vuln-cve2015-1427 --script=http-vuln-cve2015-1635 $TARGET
 		nikto -host $TARGET --port 8080
 		davtest -url http://$TARGET:8080/
@@ -291,17 +291,17 @@ if [ -z "$port_8080" ];
 
 if [ -z "$port_21" ];
 	then
-		echo -e "$OKRED + -- --=[Port 21 closed... skipping.${RED}ESET"
+		echo -e "$OKRED + -- --=[Port 21 closed... skipping.${NOCOLOR}"
 	else
-		echo -e "$OKORANGE + -- --=[Port 21 opened... running tests...${RED}ESET"
+		echo -e "$OKORANGE + -- --=[Port 21 opened... running tests...${NOCOLOR}"
 		nmap -A -sV -sC -T5 -p21 --script="ftp-*" $TARGET
 	fi
 
 if [ -z "$port_25" ];
 	then
-		echo -e "$OKRED + -- --=[Port 25 closed... skipping.${RED}ESET"
+		echo -e "$OKRED + -- --=[Port 25 closed... skipping.${NOCOLOR}"
 	else
-		echo -e "$OKORANGE + -- --=[Port 25 opened... running tests...${RED}ESET"
+		echo -e "$OKORANGE + -- --=[Port 25 opened... running tests...${NOCOLOR}"
 		nmap -A -sV -sC -T5 -p25 --script="smtp-vuln-*" $TARGET
 		smtp-user-enum -M VRFY -U $USER_FILE -t $TARGET 
 		smtp-user-enum -M EXPN -U $USER_FILE -t $TARGET 
@@ -311,35 +311,35 @@ if [ -z "$port_25" ];
 
 if [ -z "$port_161" ];
 then
-	echo -e "$OKRED + -- --=[Port 161 closed... skipping.${RED}ESET"
+	echo -e "$OKRED + -- --=[Port 161 closed... skipping.${NOCOLOR}"
 else
-	echo -e "$OKORANGE + -- --=[Port 161 opened... running tests...${RED}ESET"
+	echo -e "$OKORANGE + -- --=[Port 161 opened... running tests...${NOCOLOR}"
 	for a in `cat $SNMP_STRINGS`; do snmp-check -t $TARGET -c $a; done;
 	nmap -sU -p 161 --script="snmp*" $TARGET
 fi
 
 if [ -z "$port_162" ];
 then
-	echo -e "$OKRED + -- --=[Port 162 closed... skipping.${RED}ESET"
+	echo -e "$OKRED + -- --=[Port 162 closed... skipping.${NOCOLOR}"
 else
-	echo -e "$OKORANGE + -- --=[Port 162 opened... running tests...${RED}ESET"
+	echo -e "$OKORANGE + -- --=[Port 162 opened... running tests...${NOCOLOR}"
 	for a in `cat $SNMP_STRINGS`; do snmp-check -t $TARGET -c $a; done;
 	nmap -A -p 162 --script="snmp*" $TARGET
 fi
 
 if [ -z "$port_110" ];
 then
-	echo -e "$OKRED + -- --=[Port 110 closed... skipping.${RED}ESET"
+	echo -e "$OKRED + -- --=[Port 110 closed... skipping.${NOCOLOR}"
 else
-	echo -e "$OKORANGE + -- --=[Port 110 opened... running tests...${RED}ESET"
+	echo -e "$OKORANGE + -- --=[Port 110 opened... running tests...${NOCOLOR}"
 	nmap -A -sV -T5 --script="pop3--capabilities" --script="pop3-ntlm-info" -p 110 $TARGET
 fi
 
 if [ -z "$port_111" ];
 then
-	echo -e "$OKRED + -- --=[Port 111 closed... skipping.${RED}ESET"
+	echo -e "$OKRED + -- --=[Port 111 closed... skipping.${NOCOLOR}"
 else
-	echo -e "$OKORANGE + -- --=[Port 111 opened... running tests...${RED}ESET"
+	echo -e "$OKORANGE + -- --=[Port 111 opened... running tests...${NOCOLOR}"
 	showmount -a $TARGET
 	showmount -d $TARGET
 	showmount -e $TARGET
@@ -347,9 +347,9 @@ fi
 
 if [ -z "$port_135" ];
 then
-	echo -e "$OKRED + -- --=[Port 135 closed... skipping.${RED}ESET"
+	echo -e "$OKRED + -- --=[Port 135 closed... skipping.${NOCOLOR}"
 else
-	echo -e "$OKORANGE + -- --=[Port 135 opened... running tests...${RED}ESET"
+	echo -e "$OKORANGE + -- --=[Port 135 opened... running tests...${NOCOLOR}"
 	rpcinfo -p $TARGET
 	nmap -A -p 135 -T5 --script="rpc*" $TARGET
 fi
@@ -357,104 +357,104 @@ fi
 
 if [ -z "$port_445" ];
 	then
-		echo -e "$OKRED + -- --=[Port 445 closed... skipping.${RED}ESET"
+		echo -e "$OKRED + -- --=[Port 445 closed... skipping.${NOCOLOR}"
 			if [ -z "$port_139" ];
 				then
-			echo -e "$OKRED + -- --=[Port 139 closed... skipping.${RED}ESET"
+			echo -e "$OKRED + -- --=[Port 139 closed... skipping.${NOCOLOR}"
 				else
-			echo -e "$OKORANGE + -- --=[Port 139 opened... running tests...${RED}ESET"
+			echo -e "$OKORANGE + -- --=[Port 139 opened... running tests...${NOCOLOR}"
 			enum4linux -a $TARGET
 			nmap -p139 $TARGET --script="smb-vuln*"	
 			fi
 	else
-		echo -e "$OKORANGE + -- --=[Port 445 opened... running tests...${RED}ESET"
+		echo -e "$OKORANGE + -- --=[Port 445 opened... running tests...${NOCOLOR}"
 		enum4linux -a $TARGET
 		nmap -p445 $TARGET --script="smb-vuln*"	
 	fi
 
 if [ -z "$port_2121" ];
 then
-	echo -e "$OKRED + -- --=[Port 2121 closed... skipping.${RED}ESET"
+	echo -e "$OKRED + -- --=[Port 2121 closed... skipping.${NOCOLOR}"
 else
-	echo -e "$OKORANGE + -- --=[Port 2121 opened... running tests...${RED}ESET"
+	echo -e "$OKORANGE + -- --=[Port 2121 opened... running tests...${NOCOLOR}"
 	nmap -A -sV -T5 --script="ftp-*" -p2121 $TARGET
 	fi
 
 if [ -z "$port_3306" ];
 then
-	echo -e "$OKRED + -- --=[Port 3306 closed... skipping.${RED}ESET"
+	echo -e "$OKRED + -- --=[Port 3306 closed... skipping.${NOCOLOR}"
 else
-	echo -e "$OKORANGE + -- --=[Port 3306 opened... running tests...${RED}ESET"
+	echo -e "$OKORANGE + -- --=[Port 3306 opened... running tests...${NOCOLOR}"
 	nmap -A -sV --script="mysql*" -p 3306 $TARGET
 	mysql -u root -h $TARGET -e 'SHOW DATABASES; SELECT Host,User,Password FROM mysql.user;'
 fi
 
-echo -e "$OKGREEN + -- -- Starting UDP Scan .${RED}ESET"
+echo -e "$OKGREEN + -- -- Starting UDP Scan .${NOCOLOR}"
 us -H -mU -Iv $TARGET -p 1-65535
 
 if [ -z "$port_21" ];
 	then
-		echo -e "$OKRED + -- --=[Port 21 closed... skipping brute force.${RED}ESET"
+		echo -e "$OKRED + -- --=[Port 21 closed... skipping brute force.${NOCOLOR}"
 	else
-		echo -e "$OKORANGE + -- --=[Port 21  start brute force......${RED}ESET"
+		echo -e "$OKORANGE + -- --=[Port 21  start brute force......${NOCOLOR}"
 		medusa -h $TARGET -U $USER_FILE -P $MIN_PASS -e ns -M ftp -v 1	
 	fi
 
 if [ -z "$port_22" ];
 	then
-		echo -e "$OKRED + -- --=[Port 22 closed... skipping brute force.${RED}ESET"
+		echo -e "$OKRED + -- --=[Port 22 closed... skipping brute force.${NOCOLOR}"
 	else
-		echo -e "$OKORANGE + -- --=[Port 22 opened...  start brute force...${RED}ESET"
+		echo -e "$OKORANGE + -- --=[Port 22 opened...  start brute force...${NOCOLOR}"
 		medusa -h $TARGET -U $USER_FILE -P $MIN_PASS -e ns -M ssh -v 1
 	fi
 
 
 if [ -z "$port_445" ];
 	then
-		echo -e "$OKRED + -- --=[Port 445 closed... skipping brute force.${RED}ESET"
+		echo -e "$OKRED + -- --=[Port 445 closed... skipping brute force.${NOCOLOR}"
 	else
-		echo -e "$OKORANGE + -- --=[Port 445 opened...  start brute force...${RED}ESET"
+		echo -e "$OKORANGE + -- --=[Port 445 opened...  start brute force...${NOCOLOR}"
 		medusa -h $TARGET -U $USER_FILE -P $MIN_PASS -e ns -M SMBNT -v 1
-		echo -e "$OKRED + -- -- If anon login allowed use the nmap brute force below...${RED}ESET"
+		echo -e "$OKRED + -- -- If anon login allowed use the nmap brute force below...${NOCOLOR}"
 		#nmap -p445 --script=smb-brute --script-args smblockout=true,userdb=$USER_FILE,passdb=$MIN_PASS $TARGET
 	fi
 
 if [ -z "$port_3389" ];
 	then
-		echo -e "$OKRED + -- --=[Port 3389 closed... skipping brute force.${RED}ESET"
+		echo -e "$OKRED + -- --=[Port 3389 closed... skipping brute force.${NOCOLOR}"
 	else
-		echo -e "$OKORANGE + -- --=[Port 3389 opened...  start brute force...${RED}ESET"
+		echo -e "$OKORANGE + -- --=[Port 3389 opened...  start brute force...${NOCOLOR}"
 		rdesktop $TARGET &
 		medusa -h $TARGET -U $USER_FILE -P $MIN_PASS -e ns -M RDP -v 1
 	fi
 
 if [ -z "$port_80" ];
 	then
-		echo -e "$OKRED + -- --=[Port 80 closed... skipping extensive directory browsing.${RED}ESET"
+		echo -e "$OKRED + -- --=[Port 80 closed... skipping extensive directory browsing.${NOCOLOR}"
 	else
-		echo -e "$OKORANGE + -- --=[Port 80 opened... running extensive directory browsing...${RED}ESET"
+		echo -e "$OKORANGE + -- --=[Port 80 opened... running extensive directory browsing...${NOCOLOR}"
 		dirb http://$TARGET/ $DIRB_DIR -w -r
 	fi
 
 
 if [ -z "$port_443" ];
 	then
-		echo -e "$OKRED + -- --=[Port 443 closed... skipping extensive directory browsing.${RED}ESET"
+		echo -e "$OKRED + -- --=[Port 443 closed... skipping extensive directory browsing.${NOCOLOR}"
 	else
-		echo -e "$OKORANGE + -- --=[Port 443 opened... running extensive directory browsing...${RED}ESET"
+		echo -e "$OKORANGE + -- --=[Port 443 opened... running extensive directory browsing...${NOCOLOR}"
 		dirb https://$TARGET:443/ $DIRB_DIR -w -r
 	fi
 
 if [ -z "$port_8080" ];
 	then
-		echo -e "$OKRED + -- --=[Port 8080 closed... skipping extensive directory browsing.${RED}ESET"
+		echo -e "$OKRED + -- --=[Port 8080 closed... skipping extensive directory browsing.${NOCOLOR}"
 	else
-		echo -e "$OKORANGE + -- --=[Port 8080 opened... running extensive directory browsing...${RED}ESET"
+		echo -e "$OKORANGE + -- --=[Port 8080 opened... running extensive directory browsing...${NOCOLOR}"
 		dirb http://$TARGET:8080/ $DIRB_DIR -w -r
 	fi
 }
 
-function ports_open () {
+function nmap_ports_open () {
 	echo Type IP
 	read ip
 	echo Grabbing ports...
@@ -463,6 +463,97 @@ function ports_open () {
 	echo Scanning...
 	nmap -sC -sV -Pn -p $ports $ip
 }	
+
+function help() {
+less << _EOF_
+ Ctf -- Nmap Scanner (Version 1.6.1)  -help
+ Ctf is a tool that automates nmap scanning of defined ip, based in
+ Linux systems.
+ Press "q" to exit this Help page.
+ Commands:
+ 
+Installing
+----------
+Ideally, you should be able to just type:
+
+    Choose directory
+    
+    git clone git@github.com:meepmaster360/ctf.git
+    
+    cd ctf
+
+
+Using ctf
+----------
+To run the aplication:
+    $sudo bash ctf.sh
+    or
+    $chmod +x ctf.sh (only once)
+    $sudo ./ctf.sh
+    #./ctf.sh (root user)
+
+ By Meepmaster360
+
+ Disclaimer:
+ THIS SOFTWARE IS PROVIDED BY MEEPMASTER360 “AS IS” AND ANY EXPRESS OR IMPLIED
+ WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+ EVENT SHALL MEEPMASTER360 BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+ BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+ IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+ Press "q" to exit this Help page.
+_EOF_
+}
+
+function banner() {   # Change all;  figlet the title; start version
+	clear
+	echo -e "${GREEN}"
+	echo -e " __  __  ____  ____  ____  ___   ___    __    _  _  ____  ____  "
+	echo -e "(  \/  )( ___)( ___)(  _ \/ __) / __)  /__\  ( \( )( ___)(  _ \ "
+	echo -e " )    (  )__)  )__)  )___/\__ \( (__  /(__)\  )  (  )__)  )   / "
+	echo -e "(_/\/\_)(____)(____)(__)  (___/ \___)(__)(__)(_)\_)(____)(_)\_) "                                                                       
+	echo -e "${NOCOLORS}v1.6.2" 
+}
+
+function menu(){   # Change to case 
+    echo -e ""
+    echo -e "${GREEN}[?]${NOCOLOR} Scan type"
+    echo -e ""
+    echo -e "${GREEN}1${NOCOLOR} Fast Scan"
+    echo -e "${GREEN}2${NOCOLOR} Intense Scan"
+    echo -e ""
+    echo -e "${GREEN}3${NOCOLOR} Check/Install Dependencies"
+    echo -e "${GREEN}4${NOCOLOR} Help"
+    echo -e ""
+	echo -e "${GREEN}0${NOCOLOR} Exit/Quit"
+    echo -e ""
+    echo -e "${GREEN} Select one : ${NOCOLOR}\n"
+	read meno;
+    echo -e ""
+    
+    if [ $meno = 1 ];then # Change to case
+		nmap_ports_open
+    	elif [ $meno = 2 ];then
+        nmap_ports_open_intense
+    	elif [ $meno = 3 ];then
+        app_install
+    	elif [ $meno = 4 ];then
+        help
+		elif [ $meno = 0 ];then
+        banner
+		echo -e "\n${GREEN} Nice to meet you, Bye...${NOCOLOR}\n";sleep 2
+		exit		
+    	else
+		banner
+		echo -e "\n${GREEN} Wrong option, Bye...${NOCOLOR}\n";sleep 2
+		exit
+    fi
+	menu
+}
 
 
 # Call the functions
@@ -473,7 +564,7 @@ app_install
 update_upgrade
 IP
 echo
-echo -e "\n$b[!]${NOCOLOR} $TIME_STAMP"
+echo -e "\n${GREEN}[!]${NOCOLOR} $TIME_STAMP"
 echo
 
 sleep 5
