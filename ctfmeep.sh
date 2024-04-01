@@ -569,11 +569,11 @@ echo
 
 sleep 5
 # Hydra not activated, remove hashtag to activate function hydra
-# hydra
+hydra
 
 # Deepscan works in kali flavour
 # Deepscan not activated, remove hashtag to activate function deepscan
-# deepscan
+ deepscan
 
 # Port Scan and Services
-# ports_open
+ ports_open
