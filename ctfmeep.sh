@@ -576,4 +576,4 @@ sleep 5
 # deepscan
 
 # Port Scan and Services
-ports_open
+# ports_open
